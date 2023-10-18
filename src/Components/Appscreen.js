@@ -1,17 +1,16 @@
-import Axios from 'axios';
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 function Screen(){
-
     
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        Axios.get('https://dummyjson.com/users').then((res) => {
-            // console.log(res.data.users);
+        axios.get('https://dummyjson.com/users').then((res) => {
             setData(res.data.users);
-        })
+        });
     }, []);
+    
 
 
     const mapping = () => {
